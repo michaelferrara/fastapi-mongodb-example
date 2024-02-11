@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "fastapi-mongodb-example"
+version = "0.1.0"
+description = "Example Python FastAPI MongoDB app"
+authors = ["Michael Ferrara"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pymongo = "^4.6.1"
+pydantic-settings = "^2.1.0"
+fastapi = "^0.109.2"
+uvicorn = "^0.27.1"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.8.0"
+pytest = "^8.0.0"
+pylint = "^3.0.3"
+black = "^24.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120

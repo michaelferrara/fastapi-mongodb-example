@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    depends_on:
+      - mongodb
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_CONNECTION_STRING=mongodb://root:example@mongodb:27017?authSource=admin
+  mongodb:
+    image: mongo:6-jammy
+    container_name: fastapi_mongodb_example_mongodb
+    ports:
+      - '27017:27017'
+    volumes:
+      - dbdata:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+volumes:
+  dbdata:
